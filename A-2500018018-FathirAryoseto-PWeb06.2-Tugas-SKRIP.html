@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #eb6dd6;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header' 
+    'left left middle middle right right'
+    'leftlow leftlow midlow midlow rightlow rightlow'
+    'footer footer footer footer footer footer';
+   grid-column-gap: 10px; /* if you want gap between the columns */
+   grid-row-gap: 10px;
+} 
+
+.left,
+.middle,
+.right,
+.leftlow,
+.midlow,
+.rightlow {
+  padding: 15px;
+  height: 150px; /* Should be removed. Only for demonstration */
+}
+
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+}
+
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+
+.leftlow {
+  grid-area: leftlow;
+}
+
+.midlow {
+  grid-area: midlow;
+}
+
+.rightlow {
+  grid-area: rightlow;
+}
+
+.left:hover, .middle:hover, .right:hover, .leftlow:hover, .midlow:hover, .rightlow:hover {
+  opacity: 0.8;
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #d3ad05;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header' 
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+        
+        
+
+  }
+}
+</style>
+</head>
+<body>
+
+
+<div class="grid-container">
+  <div class="header">
+    <h2>Header</h2>
+  </div>
+  
+  <div class="left" style="background-color:#b9e561;">Kolom 1</div>
+  <div class="middle" style="background-color:#8e17f6;">Kolom 2</div>  
+  <div class="right" style="background-color:#33efbd;">Kolom 3</div>
+ 
+  <div class="leftlow" style="background-color:#a5f055;">Kolom 4</div>
+  <div class="midlow" style="background-color:#7c33f0;">Kolom 5</div>
+  <div class="rightlow" style="background-color:#4dad87;">Kolom 6</div>
+  
+  <div class="footer">
+  <p>Footer</p>
+  </div>
+</div>
+
+</body>
+</html>
